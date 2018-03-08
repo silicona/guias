@@ -8,6 +8,8 @@ Mostrar las Bases de datos
 Crear Base de datos
   : `CREATE database videoclub;`
 
+  : `CREATE DATABASE IF NOT EXISTS mi_nueva_base_de_datos CHARACTER SET utf8 COLLATE utf8_general_ci;`
+
 Operar con una Base de datos
   : `use videoclub;`
 
