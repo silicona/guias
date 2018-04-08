@@ -6,9 +6,9 @@ Mostrar las Bases de datos
   : `SHOW databases;`
 
 Crear Base de datos
-  : `CREATE database videoclub;`
+  : `CREATE database tdd_intro CHARACTER SET utf8 COLLATE utf8_general_ci;`
 
-  : `CREATE DATABASE IF NOT EXISTS mi_nueva_base_de_datos CHARACTER SET utf8 COLLATE utf8_general_ci;`
+  : `CREATE DATABASE IF NOT EXISTS api_sinatra CHARACTER SET utf8 COLLATE utf8_general_ci;`
 
 Operar con una Base de datos
   : `use videoclub;`
