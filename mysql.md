@@ -55,6 +55,8 @@ Modificar el atributo de campo DEFAULT
 Borrar el atributo de campo Default
   : `ALTER TABLE peliculas ALTER autor DROP DEFAULT;`
 
+Exportar tabla y estructura
+  : `mysqldump -u root -p nombre_base > archivo.sql` - (Pide la pass del usuario)
 
 ---
 
@@ -97,6 +99,10 @@ Crear Usuario (opcion 1)
 
 Listar todos los usuarios de un servidor MySQL
   : `SELECT User from mysql.user;`
+
+Ver los privileguios de un usuario
+  : `SHOW GRANTS FOR [usuario]@[host];`
+  : `SHOW GRANTS FOR shilum@localhost;` 
 
 Usuarios con acceso a cada base de datos
   : `SELECT u.User,Db FROM mysql.user u,mysql.db d WHERE u.User=d.User;`
