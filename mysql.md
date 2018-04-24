@@ -58,6 +58,12 @@ Borrar el atributo de campo Default
 Exportar tabla y estructura
   : `mysqldump -u root -p nombre_base > archivo.sql` - (Pide la pass del usuario)
 
+Exportar una tabla a un archivo
+  : `mysqldump –opt -h <servidor> -u <usuario> -p <basededatos> <tabla> > <archivo.sql>`
+
+Importar tabla a una base de datos existente
+  : `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
+
 ---
 
 
