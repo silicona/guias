@@ -99,6 +99,7 @@ Crear Usuario (opcion 1)
 
 Listar todos los usuarios de un servidor MySQL
   : `SELECT User from mysql.user;`
+  : `select user,host from mysql.user;`
 
 Ver los privileguios de un usuario
   : `SHOW GRANTS FOR [usuario]@[host];`
@@ -113,6 +114,11 @@ Refrescar Tabla mysql de permisos
 Obtener nuestro usuario (conectado)
   : `SELECT CURRENT_USER();`
 
+### PHPMyAdmin
+
+Los problemas de permisos con PhpMyAdmin en local pueden provenir de los usuarios root y phpmyadmin de la base de datos MySql.
+
+Verificar que los permisos de ambos usuarios son totales.
 
 
 ### Enlaces de referencia
