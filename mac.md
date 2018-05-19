@@ -19,3 +19,6 @@ Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el se
 
 En Mac, los archivos de las tablas de MySQL de PHPMyAdmin se guardan en el directorio: /Applications/XAMPP/xamppfiles/var/mysql/
 
+## Keychain
+
+Ruta: Aplicaciones/utilidades/acceso a llaveros
