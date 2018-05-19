@@ -2,253 +2,254 @@
 
 ## Comandos
 
-Mostrar las Bases de datos
-  : `SHOW databases;`
+  ### Bases y Tablas
 
-Crear Base de datos
-  : `CREATE database tdd_intro CHARACTER SET utf8 COLLATE utf8_general_ci;`
+    Mostrar las Bases de datos
+      : `SHOW databases;`
 
-  : `CREATE DATABASE IF NOT EXISTS api_sinatra CHARACTER SET utf8 COLLATE utf8_general_ci;`
+    Crear Base de datos
+      : `CREATE database tdd_intro CHARACTER SET utf8 COLLATE utf8_general_ci;`
 
-Operar con una Base de datos
-  : `use videoclub;`
+      : `CREATE DATABASE IF NOT EXISTS api_sinatra CHARACTER SET utf8 COLLATE utf8_general_ci;`
 
-Mostrar las tablas de una BD
-  : `SHOW tables;`
+    Operar con una Base de datos
+      : `use videoclub;`
 
-Muestra los registros de una tabla
-  : `DESCRIBE peliculas;`
+    Mostrar las tablas de una BD
+      : `SHOW tables;`
 
-Crear Tablas
-  : `CREATE table peliculas ( id int auto_increment, titulo varchar(20) NOT NULL, direccion varchar(200) DEFAULT '', autor varchar (200), estreno year(4), sinopsis text, primary key (codigo));`
+    Muestra la estructura de una tabla
+      : `DESCRIBE peliculas;`
 
-Vacia la tabla y la vuelve a crear
-  : `TRUNCATE table peliculas;`
+    Crear Tablas
+      : `CREATE table peliculas ( id int auto_increment, titulo varchar(20) NOT NULL, direccion varchar(200) DEFAULT '', autor varchar (200), estreno year(4), sinopsis text, primary key (codigo));`
 
-Renombrar tabla
-  : `ALTER TABLE amigos RENAME contactos;`
+    Vacia la tabla y la vuelve a crear
+      : `TRUNCATE table peliculas;`
 
-  : `RENAME TABLE amigos TO contactos;`
+    Renombrar tabla
+      : `ALTER TABLE amigos RENAME contactos;`
 
-Comprobar tabla
-  : `CHECK TABLE peliculas FAST QUICK;`
+      : `RENAME TABLE amigos TO contactos;`
 
-  : `CHECK TABLE peliculas EXTENDED;`
+    Comprobar tabla
+      : `CHECK TABLE peliculas FAST QUICK;`
 
-Añadir indice
-  : `ALTER TABLE peliculas ADD INDEX <nombre_indice>(<nombre_campo>);`
+      : `CHECK TABLE peliculas EXTENDED;`
 
-Añadir campo a tabla
-  : `ALTER TABLE (nombre_tabla) ADD COLUMN <nombre_columna> <tipo> AFTER <nombre_columna>;`
+    Añadir indice
+      : `ALTER TABLE peliculas ADD INDEX <nombre_indice>(<nombre_campo>);`
 
-  : `ALTER TABLE peliculas ADD COLUMN <campo_nuevo> varchar(30);`
+    Añadir campo a tabla
+      : `ALTER TABLE (nombre_tabla) ADD COLUMN <nombre_columna> <tipo> AFTER <nombre_columna>;`
 
-Borrar campo de tabla (no borra indices si solo hay uno en la tabla)
-  : `ALTER TABLE peliculas DROP dirección, DROP estreno;`
+      : `ALTER TABLE peliculas ADD COLUMN <campo_nuevo> varchar(30);`
 
-Modificar campos
-  : `ÀLTER TABLE peliculas MODIFY estreno SMALLINT UNSIGNED;`
+    Borrar campo de tabla (no borra indices si solo hay uno en la tabla)
+      : `ALTER TABLE peliculas DROP dirección, DROP estreno;`
 
-Modificar el atributo de campo DEFAULT
-  : `ALTER TABLE peliculas ALTER autor SET DEFAULT 'Varios';`
+    Modificar campos
+      : `ÀLTER TABLE peliculas MODIFY estreno SMALLINT UNSIGNED;`
 
-Borrar el atributo de campo Default
-  : `ALTER TABLE peliculas ALTER autor DROP DEFAULT;`
+    Modificar el atributo de campo DEFAULT
+      : `ALTER TABLE peliculas ALTER autor SET DEFAULT 'Varios';`
 
-Exportar tabla y estructura
-  : `mysqldump -u root -p nombre_base > archivo.sql` - (Pide la pass del usuario)
+    Borrar el atributo de campo Default
+      : `ALTER TABLE peliculas ALTER autor DROP DEFAULT;`
 
-Exportar una tabla a un archivo
-  : `mysqldump –opt -h <servidor> -u <usuario> -p <basededatos> <tabla> > <archivo.sql>`
+    Exportar tabla y estructura
+      : `mysqldump -u root -p nombre_base > archivo.sql` - (Pide la pass del usuario)
 
-Importar base de datos desde archivo.sql
-  : `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
+    Exportar una tabla a un archivo
+      : `mysqldump –opt -h <servidor> -u <usuario> -p <basededatos> <tabla> > <archivo.sql>`
 
-Importar tabla a una base de datos existente
-  : `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
+    Importar base de datos desde archivo.sql
+      : `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
 
-
-
----
+    Importar tabla a una base de datos existente
+      : `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
 
 
-Obtener registros de la Base de Datos
-  : `SELECT * FROM peliculas WHERE id = $id ORDER BY titulo DESC;`
+  ### Gestión de registros
 
-  : `SELECT titulo, autor FROM peliculas WHERE estreno >= '1980';`
+    Obtener registros de la Base de Datos
+      : `SELECT * FROM peliculas WHERE id = $id ORDER BY titulo DESC;`
 
-  : `SELECT titulo, autor FROM peliculas WHERE estreno BETWEEN 1980 AND 2000;`
+      : `SELECT titulo, autor FROM peliculas WHERE estreno >= '1980';`
 
-  : `SELECT * FROM libros WHERE SELECT titulo FROM peliculas WHERE NOT titulo = 'Amanecer zulu';`
-  
-  : `SELECT titulo FROM peliculas WHERE direccion LIKE "%Coppola%";`
+      : `SELECT titulo, autor FROM peliculas WHERE estreno BETWEEN 1980 AND 2000;`
 
-  : `SELECT DISTINCT titulo FROM peliculas WHERE direccion REGEXP "Coppola";`
+      : `SELECT * FROM libros WHERE SELECT titulo FROM peliculas WHERE NOT titulo = 'Amanecer zulu';`
+      
+      : `SELECT titulo FROM peliculas WHERE direccion LIKE "%Coppola%";`
 
-  : `SELECT * FROM `4887_anuncios` WHERE telefono IN (SELECT telefono from 4887_telefonos_inmobiliarias);` - Obtiene los registros de anuncios con el telefono incluido en la tabla telefonos_inmobiliarias;
+      : `SELECT DISTINCT titulo FROM peliculas WHERE direccion REGEXP "Coppola";`
 
-Crear un rgistro en la Base de datos
-  : `INSERT INTO peliculas(titulo, direccion, autor, estreno, sinopsis) VALUES ('{$nombre}', '{$direccion}', '{autor}', '{$estreno}', '{$sinopsis}');`
+      : `SELECT * FROM `4887_anuncios` WHERE telefono IN (SELECT telefono from 4887_telefonos_inmobiliarias);` - Obtiene los registros de anuncios con el telefono incluido en la tabla telefonos_inmobiliarias;
 
-Actualizar un registro
-  : `UPDATE peliculas SET titulo = '{$titulo}', direccion = '{$direccion}', autor = '{$autor}', estreno = '{$estreno}', sinopsis = '{$sinopsis}' WHERE id = $id;`
+    Crear un rgistro en la Base de datos
+      : `INSERT INTO peliculas(titulo, direccion, autor, estreno, sinopsis) VALUES ('{$nombre}', '{$direccion}', '{autor}', '{$estreno}', '{$sinopsis}');`
 
-Reemplazar un registro (puede repitir campos Primary y Unique)
-  : `REPLACE INTO peliculas VALUES (23, 'Amanecer Púrpura', 'Charles Bukowsky', '1910', 'Sinopsis de ejemplo.');`
+    Actualizar un registro
+      : `UPDATE peliculas SET titulo = '{$titulo}', direccion = '{$direccion}', autor = '{$autor}', estreno = '{$estreno}', sinopsis = '{$sinopsis}' WHERE id = $id;`
 
-Borrar un registro
-  : `DELETE FROM peliculas WHERE id = $id;`
+    Reemplazar un registro (puede repitir campos Primary y Unique)
+      : `REPLACE INTO peliculas VALUES (23, 'Amanecer Púrpura', 'Charles Bukowsky', '1910', 'Sinopsis de ejemplo.');`
 
-  : `DELETE FROM peliculas LIMIT 3;`
+    Borrar un registro
+      : `DELETE FROM peliculas WHERE id = $id;`
 
-
----
-
-
-Crear Usuario (opcion 1)
-  : `GRANT ALL ON videoclub.* TO 'usuario'@'localhost' IDENTIFIED BY 'pass';`
-
-Listar todos los usuarios de un servidor MySQL
-  : `SELECT User from mysql.user;`
-  : `select user,host from mysql.user;`
-
-Ver los privileguios de un usuario
-  : `SHOW GRANTS FOR [usuario]@[host];`
-  : `SHOW GRANTS FOR shilum@localhost;` 
-
-Usuarios con acceso a cada base de datos
-  : `SELECT u.User,Db FROM mysql.user u,mysql.db d WHERE u.User=d.User;`
-
-Refrescar Tabla mysql de permisos
-  : `FLUSH PRIVILEGES;`
-
-Obtener nuestro usuario (conectado)
-  : `SELECT CURRENT_USER();`
-
-### PHPMyAdmin
-
-Los problemas de permisos con PhpMyAdmin en local pueden provenir de los usuarios root y phpmyadmin de la base de datos MySql.
-
-Verificar que los permisos de ambos usuarios son totales.
+      : `DELETE FROM peliculas LIMIT 3;`
 
 
-### Enlaces de referencia
+  ### Usuarios de MySQL
 
-* Ver la [Documentacion de MySQL](https://dev.mysql.com/doc/)
+    Crear Usuario (opcion 1)
+      : `GRANT ALL ON videoclub.* TO 'usuario'@'localhost' IDENTIFIED BY 'pass';`
 
-* Desde [linuxito](https://www.linuxito.com/gnu-linux/nivel-medio/544-como-listar-todos-los-usuarios-en-mysql)
+    Listar todos los usuarios de un servidor MySQL
+      : `SELECT User from mysql.user;`
+      : `select user,host from mysql.user;`
 
-* Ver Crear Base de datos en [la web de Aner Barrena](http://www.anerbarrena.com/create-database-mysql-4991/)
+    Ver los privileguios de un usuario
+      : `SHOW GRANTS FOR [usuario]@[host];`
+      : `SHOW GRANTS FOR shilum@localhost;` 
 
-* Como crear usuarios de MySql en [Cambrico.net](http://cambrico.net/mysql/como-crear-un-usuario-en-mysql-3-formas-diferentes)
+    Usuarios con acceso a cada base de datos
+      : `SELECT u.User,Db FROM mysql.user u,mysql.db d WHERE u.User=d.User;`
 
-#### Instalacion de wordpress
+    Refrescar Tabla mysql de permisos
+      : `FLUSH PRIVILEGES;`
 
-Ver la instalación basica de [Wordpress en Ubuntu 16](Desde https://www.digitalocean.com/community/tutorials/como-instalar-wordpress-con-lamp-en-ubuntu-16-04-es)
+    Obtener nuestro usuario (conectado)
+      : `SELECT CURRENT_USER();`
 
+
+## PHPMyAdmin
+
+  Los problemas de permisos con PhpMyAdmin en local pueden provenir de los usuarios root y phpmyadmin de la base de datos MySql.
+
+  Verificar que los permisos de ambos usuarios son totales.
+
+
+## Enlaces de referencia
+
+  * Ver la [Documentacion de MySQL](https://dev.mysql.com/doc/)
+
+  * Desde [linuxito](https://www.linuxito.com/gnu-linux/nivel-medio/544-como-listar-todos-los-usuarios-en-mysql)
+
+  * Ver Crear Base de datos en [la web de Aner Barrena](http://www.anerbarrena.com/create-database-mysql-4991/)
+
+  * Como crear usuarios de MySql en [Cambrico.net](http://cambrico.net/mysql/como-crear-un-usuario-en-mysql-3-formas-diferentes)
+
+
+## Instalacion de wordpress
+
+  Ver la instalación basica de [Wordpress en Ubuntu 16](Desde https://www.digitalocean.com/community/tutorials/como-instalar-wordpress-con-lamp-en-ubuntu-16-04-es)
 
 
 ## Cómo crear un usuario en MySQL: 3 formas diferentes
 
-### La forma clásica, con la sentencia GRANT
 
-Utilizando la sentencia GRANT podemos crear un usuario a la par que otorgarle uno o varios privilegios sobre los objetos de una base de datos, o la base de datos completa.
+  ### La forma clásica, con la sentencia GRANT
 
-    mysql> GRANT ALL ON videoclub.* TO 'adolfo'@'localhost' IDENTIFIED BY 'pass_adolfo';
+    Utilizando la sentencia GRANT podemos crear un usuario a la par que otorgarle uno o varios privilegios sobre los objetos de una base de datos, o la base de datos completa.
 
-    mysql> GRANT SELECT, INSERT ON test.* TO 'adolfo'@'localhost' IDENTIFIED BY 'pass_adolfo';
+        mysql> GRANT ALL ON videoclub.* TO 'adolfo'@'localhost' IDENTIFIED BY 'pass_adolfo';
 
-    mysql> USE test;	>>	Database changed
+        mysql> GRANT SELECT, INSERT ON test.* TO 'adolfo'@'localhost' IDENTIFIED BY 'pass_adolfo';
 
-    mysql> SELECT * FROM frutas;
+        mysql> USE test;	>>	Database changed
 
-
-| nombre    | color    |
-|:---------:|:--------:|
-| fresa     | rojo     | 
-| manzana   | verde    | 
-| uva       | verde    |
+        mysql> SELECT * FROM frutas;
 
 
-### La sentencia CREATE USER
+    | nombre    | color    |
+    |:---------:|:--------:|
+    | fresa     | rojo     | 
+    | manzana   | verde    | 
+    | uva       | verde    |
 
 
-A partir de la versión MySQL 5.0.2 existe la posibilidad de crear usuarios sin necesidad de asignarles privilegios, utilizando la sentencia CREATE USER.
+  ### La sentencia CREATE USER
 
-    mysql> CREATE USER 'fernando'@'localhost' IDENTIFIED BY 'fer_pass';
+    A partir de la versión MySQL 5.0.2 existe la posibilidad de crear usuarios sin necesidad de asignarles privilegios, utilizando la sentencia CREATE USER.
 
-Los privilegios necesarios para ejecutar la sentencia CREATE USER son `CREATE USER` o bien `INSERT` en la base de datos mysql.
-El usuario recién creado no tiene privilegio alguno, por lo que deberemos asignarle permisos utilizando sentencias GRANT (esta vez sin la cláusula IDENTIFIED BY).
+        mysql> CREATE USER 'fernando'@'localhost' IDENTIFIED BY 'fer_pass';
 
-### Modo hardcore: insertando en la tabla users
+    Los privilegios necesarios para ejecutar la sentencia CREATE USER son `CREATE USER` o bien `INSERT` en la base de datos mysql.
+    El usuario recién creado no tiene privilegio alguno, por lo que deberemos asignarle permisos utilizando sentencias GRANT (esta vez sin la cláusula IDENTIFIED BY).
 
-Mucho cuidado con esta base de datos, ya que contiene toda la información de usuarios y permisos.
+    ### Modo hardcore: insertando en la tabla users
 
-Ejemplo de creación del usuario mariano usando INSERT en nuestra base de datos. Nos conectamos con un usuario con privilegios, en este caso root, y seleccionamos la base de datos mysql mediante la sentencia USE.
+    Mucho cuidado con esta base de datos, ya que contiene toda la información de usuarios y permisos.
 
-    mysql> USE mysql;  >>	Database changed
+    Ejemplo de creación del usuario mariano usando INSERT en nuestra base de datos. Nos conectamos con un usuario con privilegios, en este caso root, y seleccionamos la base de datos mysql mediante la sentencia USE.
 
-    mysql> INSERT INTO user VALUES('localhost','mariano',PASSWORD('pass_mariano'),'Y','Y',
+        mysql> USE mysql;  >>	Database changed
 
-    'N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N',
+        mysql> INSERT INTO user VALUES('localhost','mariano',PASSWORD('pass_mariano'),'Y','Y',
 
-    'N','N','N','','','','',0,0,0,0);		>>  Query OK, 1 row affected (0,00 sec)
+        'N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N','N',
 
-Es necesario llamar a la función PASSWORD() para almacenar el password codificado, en los otros casos, el IDENTIFIED BY se encarga de hacer la codificación.
+        'N','N','N','','','','',0,0,0,0);		>>  Query OK, 1 row affected (0,00 sec)
 
-En este caso se le dan permisos globales de INSERT y SELECT, para saber a qué corresponde cada columna, se puede hacer un DESCRIBE user.
+    Es necesario llamar a la función PASSWORD() para almacenar el password codificado, en los otros casos, el IDENTIFIED BY se encarga de hacer la codificación.
 
-    mysql> DESCRIBE user;
+    En este caso se le dan permisos globales de INSERT y SELECT, para saber a qué corresponde cada columna, se puede hacer un DESCRIBE user.
 
-| Field                 | Type              | Null | Key | Default | Extra |
-|:---------------------:|:-----------------:|:----:|:---:|:-------:|:-----:|
-| Host                  | char(60)          | NO   | PRI |         |       | 
-| User                  | char(16)          | NO   | PRI |         |       | 
-| Password              | char(41)          | NO   |     |         |       | 
-| SELECT_priv           | enum('N','Y')     | NO   |     | N       |       | 
-| Insert_priv           | enum('N','Y')     | NO   |     | N       |       | 
-| Update_priv           | enum('N','Y')     | NO   |     | N       |       | 
-| Delete_priv           | enum('N','Y')     | NO   |     | N       |       | 
-| Create_priv           | enum('N','Y')     | NO   |     | N       |       | 
-| Drop_priv             | enum('N','Y')     | NO   |     | N       |       | 
-| Reload_priv           | enum('N','Y')     | NO   |     | N       |       | 
-| Shutdown_priv         | enum('N','Y')     | NO   |     | N       |       | 
-|	(...)                 |                   |      |     |         |       |
+        mysql> DESCRIBE user;
 
-
-Para asignar privilegios a bases de datos específicas o tablas específicas, se debe usar GRANT.
-
-Utilizando este método, tenemos que forzar que se refresquen las tablas de permisos usando FLUSH PRIVILEGES.
-
-    mysql> FLUSH PRIVILEGES;
+    | Field                 | Type              | Null | Key | Default | Extra |
+    |:---------------------:|:-----------------:|:----:|:---:|:-------:|:-----:|
+    | Host                  | char(60)          | NO   | PRI |         |       | 
+    | User                  | char(16)          | NO   | PRI |         |       | 
+    | Password              | char(41)          | NO   |     |         |       | 
+    | SELECT_priv           | enum('N','Y')     | NO   |     | N       |       | 
+    | Insert_priv           | enum('N','Y')     | NO   |     | N       |       | 
+    | Update_priv           | enum('N','Y')     | NO   |     | N       |       | 
+    | Delete_priv           | enum('N','Y')     | NO   |     | N       |       | 
+    | Create_priv           | enum('N','Y')     | NO   |     | N       |       | 
+    | Drop_priv             | enum('N','Y')     | NO   |     | N       |       | 
+    | Reload_priv           | enum('N','Y')     | NO   |     | N       |       | 
+    | Shutdown_priv         | enum('N','Y')     | NO   |     | N       |       | 
+    |	(...)                 |                   |      |     |         |       |
 
 
-### Otras consideraciones
+    Para asignar privilegios a bases de datos específicas o tablas específicas, se debe usar GRANT.
 
-También se pueden crear usuarios desde la herramienta visual MySQL Administrator, que forma parte de las GUI Tools que ofrece gratuitamente MySQL y se pueden descargar desde aquí. (Es multiplataforma, pero en Mac funciona bastante mal)
+    Utilizando este método, tenemos que forzar que se refresquen las tablas de permisos usando FLUSH PRIVILEGES.
 
-Para saber con qué usuario estamos conectados en este momento, podemos usar la función CURRENT_USER() o USER().
-
-    mysql> SELECT CURRENT_USER();
+        mysql> FLUSH PRIVILEGES;
 
 
-| CURRENT_USER()   |
-|:----------------:|
-| adolfo@localhost | 
+  ### Otras consideraciones
+
+    También se pueden crear usuarios desde la herramienta visual MySQL Administrator, que forma parte de las GUI Tools que ofrece gratuitamente MySQL y se pueden descargar desde aquí. (Es multiplataforma, pero en Mac funciona bastante mal)
+
+    Para saber con qué usuario estamos conectados en este momento, podemos usar la función CURRENT_USER() o USER().
+
+        mysql> SELECT CURRENT_USER();
 
 
-Al crear un usuario, se define el contexto desde el que se puede conectar, por ejemplo 'adolfo'@'localhost' solamente se puede conectar desde el mismo servidor de la base de datos.
+    | CURRENT_USER()   |
+    |:----------------:|
+    | adolfo@localhost | 
 
-Para crear usuarios que se puedan conectar desde varias máquinas, se puede crear un usuario por cada máquina o usar el comodín '%', el usuario 'adolfo'@'%' se podría conectar desde cualquier máquina, y el usuario 'fernando'@'192.168.1.%' se podría conectar desde máquinas con una dirección IP comprendida entre 192.168.1.1 y 129.168.1.255.
+
+    Al crear un usuario, se define el contexto desde el que se puede conectar, por ejemplo 'adolfo'@'localhost' solamente se puede conectar desde el mismo servidor de la base de datos.
+
+    Para crear usuarios que se puedan conectar desde varias máquinas, se puede crear un usuario por cada máquina o usar el comodín '%', el usuario 'adolfo'@'%' se podría conectar desde cualquier máquina, y el usuario 'fernando'@'192.168.1.%' se podría conectar desde máquinas con una dirección IP comprendida entre 192.168.1.1 y 129.168.1.255.
 
 
-    GRANT SELECT, INSERT ON test.* TO 'adolfo'@'%' IDENTIFIED BY 'pass_adolfo';
+        GRANT SELECT, INSERT ON test.* TO 'adolfo'@'%' IDENTIFIED BY 'pass_adolfo';
 
-    CREATE USER 'fernando'@'192.168.1.%' IDENTIFIED BY 'fer_pass';
+        CREATE USER 'fernando'@'192.168.1.%' IDENTIFIED BY 'fer_pass';
 
-En el caso de que estemos realizando la creación de un usuario mediante el método INSERT y nos aparezca el siguiente error:
+    En el caso de que estemos realizando la creación de un usuario mediante el método INSERT y nos aparezca el siguiente error:
 
-**ERROR 1136 (21S01): Column count doesn't match value count at row 1**
+    **ERROR 1136 (21S01): Column count doesn't match value count at row 1**
 
-La razón es que algunas de las columnas de la tabla user no tienen valor por defecto (por ejemplo ssl_type), y no las hemos informado todas, es necesario hacerlo.
+    La razón es que algunas de las columnas de la tabla user no tienen valor por defecto (por ejemplo ssl_type), y no las hemos informado todas, es necesario hacerlo.
 
+Fin de Archivo
