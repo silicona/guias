@@ -113,7 +113,8 @@
 
     Ver los privileguios de un usuario
       : `SHOW GRANTS FOR [usuario]@[host];`
-      : `SHOW GRANTS FOR shilum@localhost;` 
+      : `SHOW GRANTS FOR shilum@localhost;`
+      : `select user,host,select_priv from mysql.db`
 
     Usuarios con acceso a cada base de datos
       : `SELECT u.User,Db FROM mysql.user u,mysql.db d WHERE u.User=d.User;`
