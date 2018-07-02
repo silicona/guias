@@ -7,8 +7,14 @@ Mostrar las Bases de datos
 
 Crear Base de datos
   : `CREATE database tdd_intro CHARACTER SET utf8 COLLATE utf8_general_ci;`
-
   : `CREATE DATABASE IF NOT EXISTS api_sinatra CHARACTER SET utf8 COLLATE utf8_general_ci;`
+
+Borrar Base de datos
+  : `DROP DATABASE <nombre_base>;`
+
+  : Accion por comandos si el directorio no está vacio
+Carpeta en Mac - `/Applications/XAMPP/xamppfiles/var/mysql/`
+  : `rm -r <nombre_base>`
 
 Operar con una Base de datos
   : `use videoclub;`
@@ -64,7 +70,7 @@ Exportar una tabla a un archivo
 Importar base de datos desde archivo.sql
   : `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
 
-Importar tabla a una base de datos existente
+Importar tabla a una base de datos existente desde carpeta de archivo
   : `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
 
 
@@ -87,7 +93,16 @@ Obtener registros de la Base de Datos
 
   : `SELECT * FROM `4887_anuncios` WHERE telefono IN (SELECT telefono from 4887_telefonos_inmobiliarias);` - Obtiene los registros de anuncios con el telefono incluido en la tabla telefonos_inmobiliarias;
 
-Crear un rgistro en la Base de datos
+  : SQL para ordenar las llamadas por primer dia de la semana
+
+    SELECT FROM_DAYS(TO_DAYS(f_llamada) -MOD(TO_DAYS(f_llamada) -1, 7)) AS dia_inicio_semana,
+            COUNT(id_llamada) AS num_llamadas
+                FROM 4887_llamadas
+                WHERE id_usuario = ' . $id_usuario . '
+                    GROUP BY FROM_DAYS(TO_DAYS(f_llamada) -MOD( TO_DAYS( f_llamada ) -1, 7) )
+                    ORDER BY FROM_DAYS(TO_DAYS(f_llamada) -MOD( TO_DAYS( f_llamada ) -1, 7) ) ASC';
+
+Crear un registro en la Base de datos
   : `INSERT INTO peliculas(titulo, direccion, autor, estreno, sinopsis) VALUES ('{$nombre}', '{$direccion}', '{autor}', '{$estreno}', '{$sinopsis}');`
 
 Actualizar un registro
@@ -101,7 +116,9 @@ Borrar un registro
 
   : `DELETE FROM peliculas LIMIT 3;`
 
-
+Encontrar los id_anuncio con más de un id__anuncio_seguimiento (pry), ordenados por id_anuncio
+  : `SELECT id_anuncio, count(id_anuncio_seguimiento) FROM 'tabla_seguimientos' GROUP BY id_anuncio HAVING count(id_anuncio_seguimiento) > 1`;
+  
 ---
 
 
