@@ -22,3 +22,12 @@ __<Icono>__
 	* error
 	* success
 	* info
+
+
+## SSL
+
+consola
+
+`ssh -p 22 root@123.456.789.123`
+
+`exit`
