@@ -2,6 +2,8 @@
 
 ## Comandos
 
+[Enlace Guia](https://git-scm.com/book/es/v1/Fundamentos-de-Git-Deshaciendo-cosas)
+
 ### Globales
 
 
@@ -119,6 +121,50 @@ Crear la rama gh-pages
 Acceder a la página por el navegador
   : `https://<usuario Github>/.github.io/<repositorio>`
 
+
+## Recuperando logs
+
+Historico
+  : `git hist`
+
+Mostrar las dos últimas entradas del historico
+  : `git log -2`
+
+Mostrar las n últimas entradas del historico
+  : `git log -n`
+
+Mostrar las diferencias entre logs por palabras
+  : `git log -p --word-diff`
+  : `git log -p --word-diff {+palabra_añadida+} [-palabra_eliminada-]`
+
+Mostrar estadisticas
+  : `git log --stat`
+
+
+| Opción        | Descripción |
+|:-------------:|:-----------:|
+| -p            | Muestra el parche introducido en cada confirmación. |
+| --word-diff   | Muestra el parche en formato de una palabra. |
+| --stat        | Muestra estadísticas sobre los archivos modificados en cada confirmación. |
+| --shortstat   | Muestra solamente la línea de resumen de la opción --stat. |
+| --name-only   | Muestra la lista de archivos afectados. |
+| --name-status | Muestra la lista de archivos afectados, indicando además si fueron añadidos, modificados o eliminados. |
+| --abbrev-commit | Muestra solamente los primeros caracteres de la suma SHA-1, en vez de los 40 caracteres de que se compone. |
+| --relative-date | Muestra la fecha en formato relativo (por ejemplo, “2 weeks ago” (“hace 2 semanas”)) en lugar del formato completo. |
+| --graph       | Muestra un gráfico ASCII con la historia de ramificaciones y uniones. |
+| --pretty      | Muestra las confirmaciones usando un formato alternativo. Posibles opciones son oneline, short, full, fuller y format (mediante el cual puedes especificar tu propio formato). |
+| --oneline     | Un cómodo acortamiento de la opción --pretty=oneline --abbrev-commit. |
+| --since=n.temp | Muestra desde hace un tiempo: n = entero y temp = (days, weeks, months, years) |
+| -(n)          | Muestra solamente las últimas n confirmaciones |
+| --since, --after  | Muestra aquellas confirmaciones hechas después de la fecha especificada. (--since=n.temp) n = entero y temp = (days, weeks, months, years) |
+| --until, --before | Muestra aquellas confirmaciones hechas antes de la fecha especificada. |
+| --author      | Muestra sólo aquellas confirmaciones cuyo autor coincide con la cadena especificada. |
+| --committer   | Muestra sólo aquellas confirmaciones cuyo confirmador coincide con la cadena especificada. |
+
+
+## Gitk
+
+Entorno visual para Git, incorporado. En consola: `gitk`
 
 
 
