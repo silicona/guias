@@ -4,7 +4,7 @@
 
 Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el servidor Apache de XAMPP al utilizar los dos el puerto 80.
 
-### Comandos
+### Comandos Unix
 
 `sudo apachectl start` - Inicia el servidor Mac.
 
@@ -13,6 +13,8 @@ Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el se
 `lsof -i -P|grep -i "<puerto a escuchar>"` - Muestra qué programas utilizan el puerto.
 
 `sudo lsof -i ':80'` - Muestra qué usuarios utilizan el puerto 80
+
+`ldconfig -p | grep mysqlclient` - Busca el paquete en los instalados en local
 
 
 ## MySQL

@@ -130,7 +130,8 @@ Borrar un registro
 
     Ver los privileguios de un usuario
       : `SHOW GRANTS FOR [usuario]@[host];`
-      : `SHOW GRANTS FOR shilum@localhost;` 
+      : `SHOW GRANTS FOR shilum@localhost;`
+      : `select user,host,select_priv from mysql.db`
 
     Usuarios con acceso a cada base de datos
       : `SELECT u.User,Db FROM mysql.user u,mysql.db d WHERE u.User=d.User;`
@@ -162,7 +163,7 @@ Verificar que los permisos de ambos usuarios son totales.
 
 ## Instalacion de wordpress
 
-Ver la instalación basica de [Wordpress en Ubuntu 16](Desde https://www.digitalocean.com/community/tutorials/como-instalar-wordpress-con-lamp-en-ubuntu-16-04-es)
+Ver la instalación basica de [Wordpress en Ubuntu 16](https://www.digitalocean.com/community/tutorials/como-instalar-wordpress-con-lamp-en-ubuntu-16-04-es)
 
 
 ## Cómo crear un usuario en MySQL: 3 formas diferentes
