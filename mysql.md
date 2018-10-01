@@ -101,6 +101,9 @@ SQL para ordenar las llamadas por primer dia de la semana
 Encontrar los id_anuncio con más de un id__anuncio_seguimiento (pry), ordenados por id_anuncio
     : `SELECT id_anuncio, count(id_anuncio_seguimiento) FROM 'tabla_seguimientos' GROUP BY id_anuncio HAVING count(id_anuncio_seguimiento) > 1`;
 
+Encontrar los id_soporte que tienen el id_concurso repetido en otro registro
+    : `SELECT id_soporte, count(id_concurso) as repe FROM 4887_soportes WHERE id_tipo_soporte = 0 group by id_concurso having repe > 1`
+
 Crear un registro en la Base de datos
     : `INSERT INTO peliculas(titulo, direccion, autor, estreno, sinopsis) VALUES ('{$nombre}', '{$direccion}', '{autor}', '{$estreno}', '{$sinopsis}');`
 

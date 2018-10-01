@@ -11,3 +11,14 @@ Dar permiso a Lamp a la carpeta del blog
 Dar permiso a los archivos
 
 `sudo chmod -R 774 /raiz/hasta/wp`
+
+
+## Migrar de local a remoto
+
+[web orig](https://www.gianoliveira.com/wordpress-de-local-a-remoto.html)
+
+Pasos
+  : Exportar la bbdd.
+  : Sustituir http://localhost/wordpress por http://www.tudominio.com en el sql.
+  : Ajustar wp-config.php con los valores de la bbdd de producción.
+  : Volcar todos los archivos de la carpeta local por FTP.
