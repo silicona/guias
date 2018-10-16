@@ -22,3 +22,29 @@ Pasos
   : Sustituir http://localhost/wordpress por http://www.tudominio.com en el sql.
   : Ajustar wp-config.php con los valores de la bbdd de producción.
   : Volcar todos los archivos de la carpeta local por FTP.
+
+
+## Errores
+
+Url del sitio: Modificar en tabla wp-options las dos primeras entradas.
+
+[10 errores comunes](http://blog.hostdime.com.co/10-errores-mas-comunes-de-wordpress-con-las-soluciones/)
+
+
+## Tema hijo
+
+Crear style.css con:
+
+	/*
+	   Theme Name: Divi Hijo
+	   Theme URI: http://www.oclemconsultoria.com/
+	   Version: 1
+	   Description: Tema hijo del tema Divi de wordpress
+	   Author: OclemInformatica
+	   Author URI: https://www.ocleminformatica.com
+	   Template: Divi
+	*/
+	@import url("../Divi/style.css");
+
+Crear archivo screenshot.jpg con imagen para el index de Temas.
+
