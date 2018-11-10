@@ -10,3 +10,36 @@ Dos opciones:
 
 
 [Truco de actualización de dependencias](https://www.campusmvp.es/recursos/post/truco-actualizar-a-la-ultima-las-versiones-de-dependencias-npm-en-package-json.aspx)
+
+## Escribir json
+
+{
+  "name": "clientes",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-qunit": "~0.2.0"
+  }
+}
+
+~ - Instala esa version
+^ - Minor: Instala la versión superior dentro de la mayor version actual
+>= - Mayor: Instala la version superior o igual
+* y "" - Instala la mayor versión disponible
+
+
+### npm-checl-updates
+
+Módulo para comprobar la mayor verison disponible de un paquete.
+
+Instalacion con `npm install npm-check-updates`
+
+Ejecucion con `ncu`
+
+
+## Grunt
+
+[Bases](http://trip2themoon.com/primeros-pasos-con-grunt-para-disenadores-web/)

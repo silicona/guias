@@ -263,6 +263,22 @@ La razón es que algunas de las columnas de la tabla user no tienen valor por de
 
 ## SQLs
 
+### Funciones
+
+#### FROM DAYS(0000000)
+
+Devuelve una fecha mysql desde un valor numerico en dias desde el año 0
+
+#### TO_DAYS('yyyy-mm-dd')
+
+Devuelve el numero de dias desde el año 0 de una fecha mysql
+
+#### MOD(a, b)
+
+Devuelve el módulo (resto de división) de a/b
+
+
+
 Ejemplos de sql:
   : Listar registros repetidos - `SELECT campo1 FROM tabla WHERE campo_id = id GROUP BY campo1 HAVING COUNT(*) > 1`
   : Listar registros unicos - `SELECT campo1 FROM tabla WHERE campo_id = id GROUP BY campo1 HAVING COUNT(campo1) = 1`
