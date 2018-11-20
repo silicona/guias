@@ -24,3 +24,7 @@ En Mac, los archivos de las tablas de MySQL de PHPMyAdmin se guardan en el direc
 ## Keychain
 
 Ruta: Aplicaciones/utilidades/acceso a llaveros
+
+### Link simbolicos
+
+`ln -s </path/origen/archivo> </path/destino/archivo>`
