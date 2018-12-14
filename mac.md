@@ -27,4 +27,6 @@ Ruta: Aplicaciones/utilidades/acceso a llaveros
 
 ### Link simbolicos
 
+Para realizar enlaces en usr/bin/, es necesario entrar primero por la consola del admin con `sudo su`
+
 `ln -s </path/origen/archivo> </path/destino/archivo>`
