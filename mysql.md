@@ -149,6 +149,11 @@ Los problemas de permisos con PhpMyAdmin en local pueden provenir de los usuario
 
 Verificar que los permisos de ambos usuarios son totales.
 
+Procedimiento:
+
+entrar en mysql con perfil de administrador (sudo su). Cuando se ve el prompt del admin, ejecutar `mysql`.
+Dentro de mysql, agregar todos los permisos al usuario con `GRANT ALL ON *.* TO 'usuario'@'localhost' IDENTIFIED BY 'pass';`
+
 
 ## Enlaces de referencia
 
