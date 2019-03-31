@@ -29,6 +29,9 @@ Mostrar las tablas de una BD
 Muestra la estructura de una tabla
 	: `DESCRIBE peliculas;`
 
+Muestra las constantes Constraint de una tabla
+	: `select * from information_schema.table_constraints where table_name = "avispas";`
+
 Crear Tablas
 	: `CREATE table peliculas ( id int auto_increment, titulo varchar(20) NOT NULL, direccion varchar(200) DEFAULT '', autor varchar (200), estreno year(4), sinopsis text, primary key (codigo));`
 
@@ -45,6 +48,10 @@ Comprobar tabla
 
 Añadir indice
 	  : `ALTER TABLE peliculas ADD INDEX <nombre_indice>(<nombre_campo>);`
+
+Añadir Foreing key con alter (No funciona si la tabla tiene datos)
+	: `ALTER TABLE peliculas ADD FOREIGN KEY (<nombre_campo>) REFERENCES <otra_tabla>(<nombre_campo>)`
+	: `ALTER TABLE peliculas ADD CONSTRAINT FK_NombreKey FOREIGN KEY (<nombre_campo>) REFERENCES <otra_tabla>(<nombre_campo>)`
 
 Añadir campo a tabla
 	: `ALTER TABLE (nombre_tabla) ADD COLUMN <nombre_columna> <tipo> AFTER <nombre_columna>;`
