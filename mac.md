@@ -16,6 +16,10 @@ Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el se
 
 `ldconfig -p | grep mysqlclient` - Busca el paquete en los instalados en local
 
+`df -sh *` - Muestra el tamaño de archivos y carpetas del directorio actual
+
+`du -sh *` - Como df pero mejor.
+
 
 ## MySQL
 
