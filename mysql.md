@@ -277,17 +277,17 @@ La razón es que algunas de las columnas de la tabla user no tienen valor por de
 
 ### Funciones
 
-#### CURDATE()
+#### Fechas (SQL Server)
 
-Devuelve el dia actual en formato mysql
+`NOW()` - Devuelve el datetime actual en formato mysql (yyyy-mm-dd hh:mm:ss)
 
-#### FROM DAYS(0000000)
+`CURDATE()` - Devuelve el dia actual en formato mysql (yyyy-mm-dd)
 
-Devuelve una fecha mysql desde un valor numerico en dias desde el año 0
+`CURTIME()` - Devuelve la hora actual en formato mysql (hh:mm:ss)
 
-#### TO_DAYS('yyyy-mm-dd')
+`FROM DAYS(0000000)` - Devuelve una fecha mysql desde un valor numerico en dias desde el año 0
 
-Devuelve el numero de dias desde el año 0 de una fecha mysql
+`TO_DAYS('yyyy-mm-dd')` - Devuelve el numero de dias desde el año 0 de una fecha mysql
 
 #### MOD(a, b)
 
