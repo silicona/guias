@@ -35,3 +35,13 @@ Sustitución con comillas para convertirlo en código md:
 Expresion para solo un IfModule:
 
 	(<IfModule.*((?!</IfModule>).|\n)+</IfModule>)
+
+## Lookahead
+La regexp observa lo que sigue del grupo a capturar:
+  : Positiva - `/q(?=u)/` sobre quit captura 'q'
+  : Negativa - `/q(?!u)/` sobre quit NO captura 'q'
+
+## Lookbehind
+La regexp observa lo que antecede al grupo a capturar:
+  : Positiva - `/(?<=a)b/`sobre cab captura 'b'
+  : Negativa - `/(?<!a)b/` sobre cab NO captura 'b'
