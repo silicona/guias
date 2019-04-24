@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form personalizado</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand">
+
+	<link rel="stylesheet" type="text/css" href="./css_custom.css">
+	<script type="text/javascript" src="./jquery-3.1.1.min.js"></script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			
+			/* JS para el menu_ham */
+			$('#menu_on').click(function(e){
+
+				e.preventDefault();
+				console.log('dentro');
+				$('#menu_ham').toggleClass('menu_visible');
+			});
+
+		});
+
+	</script>
+</head>
+<body>
+
+	<h1>Radio, Checkbox y Select customizado</h1>
+
+	<div>
+		<a href="https://www.antofernandez.com/personalizar-un-select-con-css/" target="_blank">Blog de Anto Fernández (Radio, Checkbox y Select)</a>
+		<br>
+		<a href="https://www.antofernandez.com/inspiracion-diseno-web-donde-encontrarla/">Blog de Anto Fernández (Sitios de inspiración)</a>
+		<br>
+		<a href="https://www.antofernandez.com/menu-hamburguesa-con-css/">Blog de Anto Fernández (Menu Hamburguesa)</a>
+		<br>
+		<a href="https://webdesign.tutsplus.com/es/articles/quick-tip-easy-css3-checkboxes-and-radio-buttons--webdesign-8953">Otro tipo de Checkbox y radio (oscuros)</a>
+		<br>
+		<a href="https://programacion.net/articulo/como_personalizar_checkboxes_y_botones_de_radio_con_css_1989">Más Checkbox y radio (Sin implementar en esta hoja)</a>
+		<br>
+
+	</div>
+
+	<form>
+
+		<label class="contenido">
+			<input type="radio" name="radios">Bici
+			<i></i>
+		</label>
+		<label class="contenido">
+			<input type="radio" name="radios">Coche
+			<i></i>
+		</label>
+		<label class="contenido">
+			<input type="radio" name="radios">Tren
+			<i></i>
+		</label>
+
+		<label class="contenido">
+			<!-- La customización se hace sobre la etiqueta i-->
+			<input type="checkbox" id="boton" value="autopista">Autopista
+			<i></i>
+		</label>
+
+		<div class="contenido_sel">
+			<select>
+				<option>Opción 1</option>
+				<option>Opción 2</option>
+				<option>Opción 3</option>
+			</select>
+			<i></i>
+		</div>
+	</form>
+
+	<form class="otro">
+		
+		<input type="checkbox" id="c1" name="">
+		<label for="c1"><span></span>Checkbox 1</label>
+
+		<br>
+
+		<input type="radio" id="r1" name="radios_otro">
+		<label for="r1"><span></span>Radio 1</label>
+
+		<input type="radio" id="r2" name="radios_otro">
+		<label for="r2"><span></span>Radio 2</label>
+
+	</form>
+
+	<div id="menu_ham">
+		<header>
+			<a href="#" id="menu_on">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+
+			<span class="titulo">Menu Hamburguesa</span>
+		</header>
+
+		<nav>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Segunda</a></li>
+				<li><a href="">Tercera</a></li>
+			</ul>
+		</nav>
+
+		<section id="seccion">
+			...Contenido...
+		</section>
+	</div>
+	
+</body>
+</html>
