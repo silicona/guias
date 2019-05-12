@@ -14,6 +14,10 @@ Extensión annotations instalada de serie
 Rutas en controlador Extensión symfony/asset instalada de serie
 Funcion de Twig asset()
 
+## Composer
+Instalar paquetes necesarios con --dev para añadirlos al json de configuracion - `composer require [nombre_paquete] --dev`
+
+
 ## NPM
 
 Instalar encore, jquery y otras librerias de JS con npm: `npm install --save [libreria]`
@@ -29,6 +33,14 @@ Problemas:
 No puede encontrar el driver: Instalar el modulo mysql en la version actual de php - `sudo apt-get install php[version~7.1]-mysql`
 
 Confirmacion: `php -i | grep mysql`
+
+### Configurar y poblar Bases de datos
+Creacion de base de datos - `php bin/console doctrine:database:create`
+
+Crear migracion - `php bin/console make:migration`
+
+Ejecutar migraciones - `php bin/console doctrine:migrations:migrate`
+
 
 ## Form
 
@@ -58,5 +70,15 @@ Seguimos en [ejemplo de cloudways](https://www.cloudways.com/blog/symfony-react-
 
 [Blog jeffrey Arquitectura de capas](https://www.thinktocode.com/2018/07/05/layered-architecture/)
 
-## Doctrine
+### guia react estados
+
+[blog](https://www.pensemosweb.com/react-metodos-ciclo-vida-componente/)
+
+### router react
+
+Instalar jsroutingbundle con - `composer require frindesofsymfony/jsroutingbundle --dev`
+
+Habilitar el bundle en config\bundle.php
+
+[docs symfony](https://symfony.com/doc/master/bundles/FOSJsRoutingBundle/installation.html)
 
