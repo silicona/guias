@@ -161,7 +161,11 @@ Procedimiento:
 entrar en mysql con perfil de administrador (sudo su). Cuando se ve el prompt del admin, ejecutar `mysql`.
 Dentro de mysql, agregar todos los permisos al usuario con `GRANT ALL ON *.* TO 'usuario'@'localhost' IDENTIFIED BY 'pass';`
 
+## Problemas de acceso
 
+  Error: Can't connect to local MySQL server through socket '/tmp/mysql.sock'
+    - Ejecutar `mysql -u root -p -h 127.0.0.1`
+    
 ## Enlaces de referencia
 
   * Ver la [Documentacion de MySQL](https://dev.mysql.com/doc/)
