@@ -4,6 +4,8 @@
 
 [Docs Backbone](https://backbonejs.org/#Events-catalog)
 
+[Docs Backbone Interior](https://backbonejs.org/docs/backbone.html)
+
 [explicacion bind](https://blog.bigbinary.com/2011/08/18/understanding-bind-and-bindall-in-backbone.html)
 
 
