@@ -46,3 +46,6 @@ Programa de consola que rastrea la ruta web por la que pasa una llamada http.
 
 Recibir las cabeceras del navegador
     : Ejecutar en consola - `curl -I localhost:<puerto, ej 3000>`
+
+## Apt
+
