@@ -17,8 +17,9 @@ Comprobar permisos de escritura al crear tema hijo y otros.
 
 ## Tema hijo - A partir de 1.7
 
-[blog origen](https://www.4webs.es/blog/crear-tema-hijo-prestashop-1-7)
+[blog origen - error](https://www.4webs.es/blog/crear-tema-hijo-prestashop-1-7)
 
+[blog tema hijo completo](https://www.jose-aguilar.com/blog/como-crear-un-tema-hijo-en-prestashop-1-7/)
 
 Para crear el child theme, nos vamos a la carpeta “Prestashop/themes“. 
 
@@ -38,6 +39,8 @@ Email: “xxxx@xxxxx.com”
 url: “http://www.xxxxxx.com
 
 no podemos olvidarnos de eliminar el símbolo “#” donde aparece escrito “use_parent_assets:true” para que esto funcione. Es una sub entrada de “Assets” para definir si quieres usar CSS y JS del tema padre (true) o no (false).
+
+
 
 ## Construccion
 
@@ -74,3 +77,10 @@ extension="intl.so"
 
 Reiniciar XAMPP
 ejecutar `php -v` - No debe dar error de extension no disponible
+
+
+## Acceso
+
+Administracion - Acceder por la url BASE_URL/nombre_tienda/admin
+
+xcache.so, pdo.so, pdo_sqlite.so, mongo.so, memcache.so, pdo_mysql.so
