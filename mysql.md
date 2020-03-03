@@ -281,6 +281,14 @@ La razón es que algunas de las columnas de la tabla user no tienen valor por de
 
 ### Funciones
 
+Obtener informacion de campos de una tabla
+	
+	Problema - Repite algunos campos y genera error en PhpMyAdmin
+	`SELECT column_name FROM information_schema.columns WHERE table_name = "4887_usuarios"`
+
+	No way
+	`SELECT c.name FROM sys.columns c JOIN sys.tables t ON c.object_id = t.object_id WHERE t.name = "4887_usuarios"`
+
 #### Fechas (SQL Server)
 
 `NOW()` - Devuelve el datetime actual en formato mysql (yyyy-mm-dd hh:mm:ss)
