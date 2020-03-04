@@ -14,6 +14,8 @@ El programa renombra la carpeta admin por seguridad.
 
 Comprobar permisos de escritura al crear tema hijo y otros.
 
+[Docs oficiales](https://devdocs.prestashop.com/1.7/modules/creation/module-file-structure/#cache-file-config-xml)
+
 
 ## Tema hijo - A partir de 1.7
 
