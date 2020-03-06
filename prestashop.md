@@ -84,3 +84,7 @@ ejecutar `php -v` - No debe dar error de extension no disponible
 Administracion - Acceder por la url BASE_URL/nombre_tienda/admin
 
 xcache.so, pdo.so, pdo_sqlite.so, mongo.so, memcache.so, pdo_mysql.so
+
+## Debug
+
+En config/defines.inc.php: `define('_PS_MODE_DEV_', true);`
