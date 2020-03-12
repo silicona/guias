@@ -90,3 +90,7 @@ xcache.so, pdo.so, pdo_sqlite.so, mongo.so, memcache.so, pdo_mysql.so
 ## Debug
 
 En config/defines.inc.php: `define('_PS_MODE_DEV_', true);`
+
+### Notice
+
+Por php7.1 sale un Notice cunado `tempnam()` crea un archivo en el sistema. Probar a poner @ delante para anular el aviso.
