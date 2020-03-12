@@ -42,11 +42,60 @@ url: “http://www.xxxxxx.com
 
 no podemos olvidarnos de eliminar el símbolo “#” donde aparece escrito “use_parent_assets:true” para que esto funcione. Es una sub entrada de “Assets” para definir si quieres usar CSS y JS del tema padre (true) o no (false).
 
+### Icono Pestaña
 
+	Template de referencia - /app/Resources/views/base.html.twig
+	Imagen - /img/favicon.ico
 
 ## Construccion
 
 [parametros por defecto INICIO](https://www.tiendaonlinemurcia.es/editar-plantilla-por-defecto-prestashop/)
+
+### Formato de urls
+
+En Param. tienda - tráfico&SEO
+
+	En apartado Formato de enlaces (* - Obligatorio)
+		
+		Ruta a los productos - 	{category:/}{id}{-:id_product_attribute}-{rewrite}{-:ean13}.html
+			Palabras clave: id* , id_product_attribute* , rewrite* , ean13 , category , categories , reference , meta_keywords , meta_title , manufacturer , supplier , price , tags
+
+		Ruta a las categorías - {id}-{rewrite}
+			Palabras clave: id* , rewrite , meta_keywords , meta_title
+
+		Ruta a la categoría que tiene el atributo "selected_filter" para el módulo de "Navegación por capas" (blocklayered) - {id}-{rewrite}{/:selected_filters}
+			Palabras clave: id* , selected_filters* , rewrite , meta_keywords , meta_title
+
+		Ruta a los proveedores - supplier/{id}-{rewrite}
+			Palabras clave: id* , rewrite , meta_keywords , meta_title
+
+		Ruta a la marca - brand/{id}-{rewrite}
+			Palabras clave: id* , rewrite , meta_keywords , meta_title
+
+		Ruta a la página - content/{id}-{rewrite}
+			Palabras clave: id* , rewrite , meta_keywords , meta_title
+
+		Ruta a la categoría de página - content/category/{id}-{rewrite}
+			Palabras clave: id* , rewrite , meta_keywords , meta_title
+
+		Ruta a los modulos - module/{module}{/:controller}
+			Palabras clave: module* , controller*
+
+### Twig
+AlejoI
+
+4p3st4sh0p$
+Helpers de twig
+
+asset - Apunta a /img
+
+### Smarty
+
+En plantillas de Smarty (.tpl) - `{debug}` devuelve las variables de la pagina.
+
+### Modulos
+
+[Validador de Modulos de Prestashop (con login)](https://validator.prestashop.com/)
 
 ### Extension INTL no cargada
 
@@ -91,6 +140,10 @@ xcache.so, pdo.so, pdo_sqlite.so, mongo.so, memcache.so, pdo_mysql.so
 
 En config/defines.inc.php: `define('_PS_MODE_DEV_', true);`
 
+Tambien en Param Avanzados - Rendimiento
+
 ### Notice
 
 Por php7.1 sale un Notice cunado `tempnam()` crea un archivo en el sistema. Probar a poner @ delante para anular el aviso.
+
+
