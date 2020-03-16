@@ -82,9 +82,7 @@ En Param. tienda - tráfico&SEO
 			Palabras clave: module* , controller*
 
 ### Twig
-AlejoI
 
-4p3st4sh0p$
 Helpers de twig
 
 asset - Apunta a /img
@@ -142,8 +140,46 @@ En config/defines.inc.php: `define('_PS_MODE_DEV_', true);`
 
 Tambien en Param Avanzados - Rendimiento
 
+### Hooks
+
+[PS 1.7]
+En archivo classes/Hooks.php, insertar codigo para detetar los hooks de la pagina y sus parametros. Crear un archivo en la carpeta apropiada (admin o root).
+
+```
+$args = array();
+foreach($hook_args as $k => $v){
+
+    $valor = (gettype($v) == 'string' || gettype($v) == 'integer') ? $v : gettype($v);
+
+    $args[] = "\t" . (string) $k . ": " . $valor;
+}
+
+$arr = array(
+    '---',
+    'Nombre: ' . $hook_name,
+    'args:', implode("\n", $args),
+    'id_module: ' . $id_module,
+    'arr_return (type):' . gettype($array_return),
+    'check (bool): ' . (string) $check_exceptions,
+    'use_push (bool): ' . (string) $use_push,
+    'id_shop (type):' . (string) $id_shop,
+    'chain (bool): ' . (string) $chain,
+);
+
+file_put_contents('hooks_exec.txt', PHP_EOL.implode("\n", $arr), FILE_APPEND | LOCK_EX);
+```
+
 ### Notice
 
 Por php7.1 sale un Notice cunado `tempnam()` crea un archivo en el sistema. Probar a poner @ delante para anular el aviso.
 
+## Tests
+
+### Puppeteer
+
+[Docs Prestashop](https://github.com/PrestaShop/PrestaShop/blob/develop/tests/puppeteer/README.md)
+
+### Modulos
+
+No tienes permisos para desactivar el modulo - 
 
