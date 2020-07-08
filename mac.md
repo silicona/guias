@@ -6,6 +6,8 @@ Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el se
 
 ### Comandos Unix
 
+`pwd` - muestra el directorio actual completo
+
 `sudo apachectl start` - Inicia el servidor Mac.
 
 `sudo apachectl stop` - Detiene el servidor de Mac para que XAMPP utilice el puerto 80.
@@ -20,10 +22,23 @@ Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el se
 
 `du -sh *` - Como df pero mejor.
 
+`prgrep [nombre_servicio]` - Devuelve el PID del proceso
+
+`ps -ax` - Ver todos los procesos
+
+`ps -ax | grep [proceso]` - Ver proceso concreto
+
+`kill [PID]` - Termina el proceso del PID
+
+`killall [nombre_servico]` - Termina todos los procesos del servicio
 
 ## MySQL
 
 En Mac, los archivos de las tablas de MySQL de PHPMyAdmin se guardan en el directorio: /Applications/XAMPP/xamppfiles/var/mysql/
+
+Problema: No se inicia mysql de XAMPP
+    Posiblemente, Mac ha iniciado un servicio mysqld. Elimina todos los procesos anteriores.
+
 
 ## Keychain
 

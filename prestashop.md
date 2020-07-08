@@ -16,6 +16,9 @@ Comprobar permisos de escritura al crear tema hijo y otros.
 
 [Docs oficiales](https://devdocs.prestashop.com/1.7/modules/creation/module-file-structure/#cache-file-config-xml)
 
+¡¡Localhost con XAMPP!!
+function `mail` provoca error al pagar - deshabilitar en:
+`vendor/swiftmailer/swiftmailer/lilb/classes/Swift/Transport/SimpleMailInvoker.php`
 
 ## Tema hijo - A partir de 1.7
 
@@ -50,6 +53,15 @@ no podemos olvidarnos de eliminar el símbolo “#” donde aparece escrito “u
 ## Construccion
 
 [parametros por defecto INICIO](https://www.tiendaonlinemurcia.es/editar-plantilla-por-defecto-prestashop/)
+
+### Imágenes
+Todos .jpeg o .png, salvo excepciones.
+Logotipo - (160~200)x(40~65) px
+favicon - .ico 16x16 o 32x32
+ps_banner - 1110x214 px
+ps_slider - 1111x340 px
+producto - 800x800 px
+marca de agua - .gif
 
 ### Formato de urls
 
@@ -90,10 +102,61 @@ asset - Apunta a /img
 ### Smarty
 
 En plantillas de Smarty (.tpl) - `{debug}` devuelve las variables de la pagina.
+`{dump($variableName)}`
+`{$var|@print_r}`
+`{$var|@debug_print_var}`
+
+
+```
+{* This string is commented out *}
+
+{*
+This string is too!
+*}
+```
 
 ### Modulos
 
 [Validador de Modulos de Prestashop (con login)](https://validator.prestashop.com/)
+
+#### AJAX
+
+[ajax dentro de un modulo](https://www.prestashop.com/forums/topic/911760-ajax-request-to-custom-admin-module-controller/)
+
+Turns out there are 2 types of ajax methods:
+```
+public function ajaxProcessGetBar(){
+    // this will be called in combination with postProcess()
+    // on your ajax call, if you have submitted $_POST['action'] = 'getBar';  
+    // then this will be called.
+}
+
+public function displayAjaxGetbar(){
+    //this will be called even without the post process, as long as $_POST['ajax'] = 1;
+    // on your ajax call, if you have submitted $_POST['action'] = 'getBar'; 
+    // notice that you have to change the function name to all lower case.
+}
+```
+ 
+So, here's what's important to consider:
+```
+class AdminFooBarController extends ModuleAdminController
+{
+    public function postProcess()
+    {
+        return parent::postProcess(); // IF YOU DON'T DO THIS FOR ANY REASON
+    }
+
+    public function ajaxProcessGetBar()
+    {
+        return 'foo'; //THIS WON'T BE FUNCTIONING PROPERLY
+    }
+}
+```
+
+DEVOLVER RESULTADO:
+  Utilizar metodo de `ControllerCore::ajaxDie(value, controller, method)`
+
 
 ### Extension INTL no cargada
 
@@ -111,6 +174,8 @@ Afterwards use commands:
 ./configure
 make
 sudo make install (your password is required, make sure you are an admin user in macOS)
+
+Probar esto - https://stackoverrun.com/es/q/7655091
 
 Download the version of php you use in xampp from php.net.
 Extract it and open the extracted folder in a terminal using cd.
@@ -151,19 +216,21 @@ foreach($hook_args as $k => $v){
 
     $valor = (gettype($v) == 'string' || gettype($v) == 'integer') ? $v : gettype($v);
 
-    $args[] = "\t" . (string) $k . ": " . $valor;
+    $args[] = "\t\t" . (string) $k . ": " . $valor;
 }
 
+    //dump(debug_backtrace());
 $arr = array(
     '---',
     'Nombre: ' . $hook_name,
-    'args:', implode("\n", $args),
-    'id_module: ' . $id_module,
-    'arr_return (type):' . gettype($array_return),
-    'check (bool): ' . (string) $check_exceptions,
-    'use_push (bool): ' . (string) $use_push,
-    'id_shop (type):' . (string) $id_shop,
-    'chain (bool): ' . (string) $chain,
+    "\targs:", implode("\n", $args),
+    "\tid_module: " . $id_module,
+    "\tarr_return (type): " . gettype($array_return),
+    "\tcheck (bool): " . (string) $check_exceptions,
+    "\tuse_push (bool):  " . (string) $use_push,
+    "\tid_shop (type): " . (string) $id_shop,
+    "\tchain (bool): " . (string) $chain,
+    '---'
 );
 
 file_put_contents('hooks_exec.txt', PHP_EOL.implode("\n", $arr), FILE_APPEND | LOCK_EX);
@@ -181,5 +248,25 @@ Por php7.1 sale un Notice cunado `tempnam()` crea un archivo en el sistema. Prob
 
 ### Modulos
 
-No tienes permisos para desactivar el modulo - 
+## ERRORES 
+
+Fallo al recargar lista de modulos desde curl api.prestashop.com
+En `classes/controller/AdminController.php::initTabmoduleList`, 2177 al hacer refresh con la url de la api.
+
+### Compra en XAMPP localhost
+
+El envio de email desde local entorpece el proceso de pago. Para inhabilitarlo:
+Rastrear el envio del email con el pedido:
+    classes/PaymentModule - Poner DEBUG_MODE=true y seguir el rastro de logs.
+    PS 1.7.6.4
+    classes/PaymentModule::validateOrder, lin 555 New Order History() -> addWithemail()
+    classes/order/OrderHistory::addWithemail -> sendEmail()
+    classes/order/OrderHistory::sendEmail, lin 539 Mail::Send()
+    classes/Mail::send
+        lin 365 Swift_Mailer - 
+            vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php
+        lin 595 $swift -> send - Provoca que Localhost no devuelva nada
+            Cambiar por $send = true para pruebas y localhost
+
+
 
