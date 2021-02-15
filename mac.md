@@ -32,6 +32,8 @@ Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el se
 
 `killall [nombre_servico]` - Termina todos los procesos del servicio
 
+`chmod -R 755 *` - Da permisos rwxr-xr-x a los archivos de la carpeta. -R hace recursiva la orden para las subcarpetas.
+
 ## MySQL
 
 En Mac, los archivos de las tablas de MySQL de PHPMyAdmin se guardan en el directorio: /Applications/XAMPP/xamppfiles/var/mysql/
@@ -61,6 +63,7 @@ Programa de consola que rastrea la ruta web por la que pasa una llamada http.
 
 Recibir las cabeceras del navegador
     : Ejecutar en consola - `curl -I localhost:<puerto, ej 3000>`
+    : Obtener ip del router - `curl ifconfig.me`
 
 ## Apt
 

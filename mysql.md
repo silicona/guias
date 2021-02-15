@@ -166,6 +166,19 @@ Dentro de mysql, agregar todos los permisos al usuario con `GRANT ALL ON *.* TO 
   Error: Can't connect to local MySQL server through socket '/tmp/mysql.sock'
     - Ejecutar `mysql -u root -p -h 127.0.0.1`
     
+### Incompatibilidad mysql nativo y xampp
+Producido al utilizar WorkBench, que solo acepta MySql Server, con MariaDb de Xampp
+
+Normalmente, xampp y su MySql(MariaDB) estan en la carpeta xampp.
+El MySql nativo puede haber sido instalado en /usr/local/mysql[linksim]/
+
+  Error: Can't connect to local MySQL server through socket '/tmp/mysql.sock'
+    - Ejecutar `/usr/local/mysql[linksim]/support-files/mysql.server start` para iniciar el servidor en 3306
+    - Ejecutar `/usr/local/mysql/bin/mysql` para conectar a mysql ó
+    - Ejecutar WorkBench sobre la conexion en puerto 3306
+
+Es posible haya que utilizar `sudo`.
+
 ## Enlaces de referencia
 
   * Ver la [Documentacion de MySQL](https://dev.mysql.com/doc/)

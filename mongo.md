@@ -1,6 +1,0 @@
-# Mongo
-
-## NodeJS - Mongoose
-
-
-

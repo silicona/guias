@@ -16,6 +16,10 @@ Comprobar permisos de escritura al crear tema hijo y otros.
 
 [Docs oficiales](https://devdocs.prestashop.com/1.7/modules/creation/module-file-structure/#cache-file-config-xml)
 
+## Modulo AutoUpgrade - actualizador de versiones PrestaShop
+
+[Source](https://github.com/PrestaShop/autoupgrade/releases)
+
 ¡¡Localhost con XAMPP!!
 function `mail` provoca error al pagar - deshabilitar en:
 `vendor/swiftmailer/swiftmailer/lilb/classes/Swift/Transport/SimpleMailInvoker.php`
@@ -98,6 +102,8 @@ En Param. tienda - tráfico&SEO
 Helpers de twig
 
 asset - Apunta a /img
+
+`{{ path('url_nombrada_de_routes_yml', {attr_requerido:valor_requerido}) }}` - Crea la url en el template twig
 
 ### Smarty
 
@@ -268,5 +274,32 @@ Rastrear el envio del email con el pedido:
         lin 595 $swift -> send - Provoca que Localhost no devuelva nada
             Cambiar por $send = true para pruebas y localhost
 
+## Domain\Repository
+
+En Prestashop
+  - Doctrine\DBAL\Query\QueryBuilder - vendor/doctrine
+  - Doctrine\DBAL\Driver\PDOStatement - vendor/doctrine
+
+[PDO fetch y otros](https://www.php.net/manual/en/pdostatement.fetch.php)
+[PDO docs constantes](https://www.php.net/manual/es/pdo.constants.php)
+## Forms
+
+[Docs Presta](https://devdocs.prestashop.com/1.7/development/architecture/migration-guide/forms/crud-forms/)
+
+  - FormDataProvider - Form\DataProvider\MyFormDataProvider + registro en services.yml
+    - Inyecta queryBus como getData()
+  - FormType - Form\Type\MyFormType
+  - FormBuilder - registro en services.yml con args(MyFormType, MyFormDataProvider)
+  - FormDataHandler - Form\DataHandler\MyFormDataHandler + registro en services.yml
+    - Inyecta commandBus en create() y update()
+
+## Grids
+
+[docs Presta Grid](https://devdocs.prestashop.com/1.7/development/components/grid/)
+[Docs Presta Filters](https://devdocs.prestashop.com/1.7/development/components/grid/tutorials/work-with-search-form/in-1-7-5/)
+
+  - GridDefinitionFactory - Grid\Definition\Factory\MyGridDefinitonFactory + registro en services.yml (por filters)
+  - GridQuery - Grid\Query\MyGridQuery
+  - GridSearchSearchCriteria - GRID\Search\SearchCriteria\MySearchCriteria
 
 

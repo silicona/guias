@@ -77,5 +77,11 @@ Libreria de modulos en 'lib/'.
 [Gran curso Python3](http://www.diveintopython3.net/table-of-contents.html#your-first-python-program)
 
 
+### PYGRAPHVIZ
+
+[Docs](https://pygraphviz.github.io/documentation.html)
+
+[Docs Graphviz](https://graphviz.org/doc/info/shapes.html)
+
 
 
