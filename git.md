@@ -142,7 +142,7 @@ Git soporta código de proyectos Subversion, Mercurial or TFS.
 
   Acceder a la página por el navegador
   : https://<usuario Github>/.github.io/<repositorio>
-  : [Ver página de sitio_html](https://github.com/silicona/.github.io/sitio_html)
+  : [Ver página de sitio_html](https://silicona.github.io/sitio_html/)
 
 ## Recuperando logs
 
