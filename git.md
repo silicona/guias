@@ -84,6 +84,8 @@ Git soporta código de proyectos Subversion, Mercurial or TFS.
   - Crear nueva rama y cambia a ella: `git checkout -b "nombre de rama"`
   - Cambia a una rama: `git checkout master` (vuelve al master para el merge)
   - Se junta la rama con el master: `git merge "nombre de rama"`
+  - Obtiene los branchs remotos: `git fetch origin [nombre de branch remoto]`
+  - Merge una branch remota en el master local: `git merge origin/[nombre de branch remoto]`
   - Obtener las ramas existentes y la actual: `git branch`
   - Borra una rama que no haya sido merged con el master: `git branch -D "nombre de rama"`
   - Devuelve el proyecto al inicio de la rama o el master: `git checkout -f`
