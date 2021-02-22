@@ -96,7 +96,8 @@ Crear la rama gh-pages
 
 Acceder a la página por el navegador
   - https://[usuario Github].github.io/[nombre de repositorio]
-  - [Ver página de sitio_html](https://silicona.github.io/sitio_html/index)
+  - [Ver página del Repositorio sitio_html](https://silicona.github.io/sitio_html/index)
+  - [Ver página del Repositorio sitioweb](https://silicona.github.io/sitioweb)
 
 ## Recuperando logs
 
