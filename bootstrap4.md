@@ -7,73 +7,73 @@
 [W3Schools](https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp)
 
 Alerts
-	.alert	Creates an alert message box		Alerts
-	.alert-danger	Red alert. Indicates a dangerous or potentially negative action		Alerts
-	.alert-dark	Dark alert. Dark grey alert box		Alerts
-	.alert-dismissible	Indicates a closable alert box. Together with the .close class, this class is used to close the alert (adds extra padding)		Alerts
-	.alert-heading	Adds color:inherit to the specified element		Alerts
-	.alert-info	Teal alert. Indicates a neutral informative change or action		Alerts
-	.alert-light	Light alert. Light grey alert box		Alerts
-	.alert-link	Used on links inside alerts to provide matching colored links		Alerts
-	.alert-primary	Blue alert. Indicates an important action		Alerts
-	.alert-secondary	Grey alert. Indicates a "less" important action		Alerts
-	.alert-success	Green alert. Indicates a successful or positive action		Alerts
-	.alert-warning	Yellow alert. Indicates caution should be taken with this action		Alerts
-	.fade	Adds a fading effect when closing an alert box		Alerts
+  - .alert	Creates an alert message box		Alerts
+  - .alert-danger	Red alert. Indicates a dangerous or potentially negative action		Alerts
+  - .alert-dark	Dark alert. Dark grey alert box		Alerts
+  - .alert-dismissible	Indicates a closable alert box. Together with the .close class, this class is used to close the alert (adds extra padding)		Alerts
+  - .alert-heading	Adds color:inherit to the specified element		Alerts
+  - .alert-info	Teal alert. Indicates a neutral informative change or action		Alerts
+  - .alert-light	Light alert. Light grey alert box		Alerts
+  - .alert-link	Used on links inside alerts to provide matching colored links		Alerts
+  - .alert-primary	Blue alert. Indicates an important action		Alerts
+  - .alert-secondary	Grey alert. Indicates a "less" important action		Alerts
+  - .alert-success	Green alert. Indicates a successful or positive action		Alerts
+  - .alert-warning	Yellow alert. Indicates caution should be taken with this action		Alerts
+  - .fade	Adds a fading effect when closing an alert box		Alerts
 
 Badges
-	.badge	Creates a circular badge (grey circle - often used as a numerical indicator)		Badges
-	.badge-danger	Red badge. Indicates a dangerous or potentially negative action		Badges
-	.badge-dark	Dark badge. Dark grey alert box		Badges
-	.badge-info	Teal badge. Indicates a neutral informative change or action		Badges
-	.badge-light	Light badge. Light grey alert box		Badges
-	.badge-pill	Makes a badge more round		Badges
-	.badge-primary	Blue badge. Indicates an important action		Badges
-	.badge-secondary	Grey badge. Indicates a "less" important action		Badges
-	.badge-success	Green badge. Indicates a successful or positive action		Badges
-	.badge-warning	Yellow badge. Indicates caution should be taken with this action		Badges
+  - .badge	Creates a circular badge (grey circle - often used as a numerical indicator)		Badges
+  - .badge-danger	Red badge. Indicates a dangerous or potentially negative action		Badges
+  - .badge-dark	Dark badge. Dark grey alert box		Badges
+  - .badge-info	Teal badge. Indicates a neutral informative change or action		Badges
+  - .badge-light	Light badge. Light grey alert box		Badges
+  - .badge-pill	Makes a badge more round		Badges
+  - .badge-primary	Blue badge. Indicates an important action		Badges
+  - .badge-secondary	Grey badge. Indicates a "less" important action		Badges
+  - .badge-success	Green badge. Indicates a successful or positive action		Badges
+  - .badge-warning	Yellow badge. Indicates caution should be taken with this action		Badges
 
 Buttons
-	.active	Adds a dark-blue background color to simulate a "pressed" button		Buttons
-	.btn	Creates a basic button (gray background and rounded corners)		Buttons
-	.btn-block	Creates a block level button that spans the entire width of the parent element		Buttons
-	.btn-dark	Dark grey button		Buttons
-	.btn-danger	Red button. Indicates danger or a negative action		Buttons
-	.btn-info	Teal button. Represents a neutral informative change or action		Buttons
-	.btn-light	Light grey button		Buttons
-	.btn-link	Makes a button look like a link (get button behavior)		Buttons
-	.btn-lg	Large button		Buttons
-	.btn-outline-dark	Dark grey bordered/outlined button		Buttons
-	.btn-outline-danger	Red bordered/outlined button. Indicates danger or a negative action		Buttons
-	.btn-outline-info	Teal bordered/outlined button. Represents a neutral informative change or action		Buttons
-	.btn-outline-light	Light grey bordered/outlined button		Buttons
-	.btn-outline-primary	Blue bordered/outlined button.		Buttons
-	.btn-outline-secondary	Grey bordered/outlined button. Indicates a "less" important action		Buttons
-	.btn-outline-success	Green bordered/outlined button. Indicates success or a positive action		Buttons
-	.btn-outline-warning	Orange bordered/outlined button. Represents warning or a negative action		Buttons
-	.btn-primary	Blue button. Indicates a something important		Buttons
-	.btn-sm	Small button		Buttons
-	.btn-secondary	Grey button. Indicates a "less" important action		Buttons
-	.btn-success	Green button. Indicates success or a positive action		Buttons
-	.btn-toolbar	Combine sets of button groups into button toolbars for more complex components		Button Groups
-	.btn-warning	Orange button. Represents warning or a negative action		Buttons
-	.disabled	Disables a button (adds opacity and a "no-parking-sign" icon on hover)		Buttons
+  - .active	Adds a dark-blue background color to simulate a "pressed" button		Buttons
+  - .btn	Creates a basic button (gray background and rounded corners)		Buttons
+  - .btn-block	Creates a block level button that spans the entire width of the parent element		Buttons
+  - .btn-dark	Dark grey button		Buttons
+  - .btn-danger	Red button. Indicates danger or a negative action		Buttons
+  - .btn-info	Teal button. Represents a neutral informative change or action		Buttons
+  - .btn-light	Light grey button		Buttons
+  - .btn-link	Makes a button look like a link (get button behavior)		Buttons
+  - .btn-lg	Large button		Buttons
+  - .btn-outline-dark	Dark grey bordered/outlined button		Buttons
+  - .btn-outline-danger	Red bordered/outlined button. Indicates danger or a negative action		Buttons
+  - .btn-outline-info	Teal bordered/outlined button. Represents a neutral informative change or action		Buttons
+  - .btn-outline-light	Light grey bordered/outlined button		Buttons
+  - .btn-outline-primary	Blue bordered/outlined button.		Buttons
+  - .btn-outline-secondary	Grey bordered/outlined button. Indicates a "less" important action		Buttons
+  - .btn-outline-success	Green bordered/outlined button. Indicates success or a positive action		Buttons
+  - .btn-outline-warning	Orange bordered/outlined button. Represents warning or a negative action		Buttons
+  - .btn-primary	Blue button. Indicates a something important		Buttons
+  - .btn-sm	Small button		Buttons
+  - .btn-secondary	Grey button. Indicates a "less" important action		Buttons
+  - .btn-success	Green button. Indicates success or a positive action		Buttons
+  - .btn-toolbar	Combine sets of button groups into button toolbars for more complex components		Button Groups
+  - .btn-warning	Orange button. Represents warning or a negative action		Buttons
+  - .disabled	Disables a button (adds opacity and a "no-parking-sign" icon on hover)		Buttons
 
 Button Groups
-	.btn-group	Groups buttons together on a single line		Button Groups
-	.btn-group-lg	Large button group (makes all buttons in a button group larger - increased font-size and padding)		Button Groups
-	.btn-group-sm	Small button group (makes all buttons in a button group smaller)		Button Groups
-	.btn-group-vertical	Makes a button group appear vertically stacked		Button Groups
+  - .btn-group	Groups buttons together on a single line		Button Groups
+  - .btn-group-lg	Large button group (makes all buttons in a button group larger - increased font-size and padding)		Button Groups
+  - .btn-group-sm	Small button group (makes all buttons in a button group smaller)		Button Groups
+  - .btn-group-vertical	Makes a button group appear vertically stacked		Button Groups
 
 Cards
-	.card	Creates a card		Cards
-	.card-body	Container for card content		Cards
-	.card-columns	Container to create a masonry-like grid of cards		Cards
-	.card-danger	Adds a red background color to the card. Represents danger or a negative action		Cards
-	.card-dark	Adds a grey background color to the card		Cards
-	.card-deck	Container to create a grid of cards that are of equal height and width		Cards
-	.card-footer	Card footer		Cards
-	.card-group	Container to create a grid of cards that are of equal height and width, without side margins		Cards
+  - .card	Creates a card		Cards
+  - .card-body	Container for card content		Cards
+  - .card-columns	Container to create a masonry-like grid of cards		Cards
+  - .card-danger	Adds a red background color to the card. Represents danger or a negative action		Cards
+  - .card-dark	Adds a grey background color to the card		Cards
+  - .card-deck	Container to create a grid of cards that are of equal height and width		Cards
+  - .card-footer	Card footer		Cards
+  - .card-group	Container to create a grid of cards that are of equal height and width, without side margins		Cards
 	.card-header	Card header		Cards
 	.card-header-tabs	Styles navigation tabs inside the card header		Cards
 	.card-header-pills	Styles navigation pills inside the card header		Cards
@@ -83,7 +83,7 @@ Cards
 	.card-info	Adds a teal background color to the card. Represents some information		Cards
 	.card-light	Adds a light grey background color to the card		Cards
 	.card-link	Adds a blue color to any link and a hover effect inside the card		Cards
-	.card-primary	Adds a blue background color to the card. Represents something important		Cards
+	  - card-primary	Adds a blue background color to the card. Represents something important		Cards
 	.card-secondary	Adds a grey background color to the card. Represents something "less" important		Cards
 	.card-subtitle	The .card-subtitle is used after a .card-title, and adds the following to an element: margin-top: -.375rem; margin-bottom: 0;		Cards
 	.card-success	Adds a green background color to the card. Indicates success or a positive action		Cards
