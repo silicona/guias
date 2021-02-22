@@ -137,12 +137,12 @@ Git soporta código de proyectos Subversion, Mercurial or TFS.
 
 ## Paginas estáticas de Github
 
-  Crear la rama gh-pages
-    : git checkout -b "gh-pages"
+Crear la rama gh-pages
+  - `git checkout -b "gh-pages"`
 
 Acceder a la página por el navegador
-  : https://<usuario Github>/.github.io/<repositorio>
-  : [Ver página de sitio_html](https://silicona.github.io/sitio_html/)
+  - https://[usuario Github].github.io/[nombre de repositorio]
+  - [Ver página de sitio_html](https://silicona.github.io/sitio_html/)
 
 ## Recuperando logs
 
