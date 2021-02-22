@@ -93,6 +93,24 @@
   Clona el repositorio remoto en el local (carpeta incluida)
     : `git clone https://..../xxx.git`
 
+#### Nuevo repositorio desde comandos
+
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/silicona/aplicacion_banco_java.git
+    git push -u origin main
+
+#### Repositorio existente desde comandos
+
+    git remote add origin https://github.com/silicona/aplicacion_banco_java.git
+    git branch -M main
+    git push -u origin main
+
+#### Importar desde otro repositorio
+
+Git soporta código de proyectos Subversion, Mercurial or TFS.
 
 ### Branching y Merging
 

@@ -2,6 +2,12 @@
 
 [Pagina de Joe di Castro](http://joedicastro.com/pages/markdown.html)
 
+## Salto de linea
+
+Para realizar un salto de línea dentro del mismo párrafo, hay que dejar dos espacios en blaco despues del punto y aparte.
+    
+## Títulos
+
 * # H1
 
 * ## Esto es un H2
