@@ -140,7 +140,7 @@ Git soporta código de proyectos Subversion, Mercurial or TFS.
   Crear la rama gh-pages
     : git checkout -b "gh-pages"
 
-  Acceder a la página por el navegador
+Acceder a la página por el navegador
   : https://<usuario Github>/.github.io/<repositorio>
   : [Ver página de sitio_html](https://silicona.github.io/sitio_html/)
 
