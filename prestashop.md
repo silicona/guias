@@ -16,6 +16,15 @@ Comprobar permisos de escritura al crear tema hijo y otros.
 
 [Docs oficiales](https://devdocs.prestashop.com/1.7/modules/creation/module-file-structure/#cache-file-config-xml)
 
+## Webpack
+
+[docs](https://devdocs.prestashop.com/1.7/themes/getting-started/asset-management/webpack/)
+
+Desde el directorio `_dev`:
+  : Ejecutar compilacion - `npm run build`
+  : Ejecutar compilacion al modificar - `npm run watch`
+
+  
 ## Modulo AutoUpgrade - actualizador de versiones PrestaShop
 
 [Source](https://github.com/PrestaShop/autoupgrade/releases)

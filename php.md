@@ -4,6 +4,21 @@
 
 [Tutorial simple](https://diego.com.es/tutorial-de-simplexml)
 
+## Update Php Cli
+### Brew
+En consola:
+  - `brew install php@7.4`
+  - `brew link --force --overwrite php@7.4`
+  - `brew services start php@7.4`
+  - `export PATH="/usr/local/opt/php@7.4/bin:$PATH"`
+  - `export PATH="/usr/local/opt/php@7.4/sbin:$PATH"`
+
+
+## Mpdf
+
+[Css para crear pdfs](http://www.sidar.org/recur/desdi/traduc/es/css/page.html)
+[Mas del mismo sitio - inline-box](http://www.sidar.org/recur/desdi/traduc/es/css/visuren.html#line-box)
+
 ### Detectar elementos repetidos en array
 
 
