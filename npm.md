@@ -30,8 +30,13 @@ Dos opciones:
 >= - Mayor: Instala la version superior o igual
 * y "" - Instala la mayor versión disponible
 
-
-### npm-checl-updates
+## Comandos
+- `npm list -g`: Lista los modules instalados de forma global
+- `npm list -g -depth=1`: Lo mismo con el primer nivel
+- 
+- `npm i -D [nombre de paquete]`: Instala paquete en el proyecto en env development
+- `npm i -g [nombre de paquete]`: Instala de manera global
+### npm-check-updates
 
 Módulo para comprobar la mayor verison disponible de un paquete.
 
