@@ -32,6 +32,8 @@
   - Confirma los archivos para enviar
     - `git commit -m 'Mensaje del commit'`
     - `git commit -a` (solo confirma archivos con seguimiento)
+  - Eliminar staged (antes de commit)
+    - `git reset`
 
   - Informe de commits
     - `git log` (da el SHA de cada commit)

@@ -223,7 +223,7 @@ Tambien en Param Avanzados - Rendimiento
 ### Hooks
 
 [PS 1.7]
-En archivo classes/Hooks.php, insertar codigo para detetar los hooks de la pagina y sus parametros. Crear un archivo en la carpeta apropiada (admin o root).
+En archivo classes/Hooks.php, funcion exec, insertar codigo para detetar los hooks de la pagina y sus parametros. Crear un archivo en la carpeta apropiada (admin o root).
 
 ```
 $args = array();

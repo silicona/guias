@@ -21,6 +21,9 @@ Mac trae un servidor Apache montado por defecto. Puede crear conflicto con el se
   - Termina todos los procesos del servicio: `killall [nombre_servico]`
   - Da permisos rwxr-xr-x a los archivos de la carpeta. -R hace recursiva la orden para las subcarpetas: `chmod -R 755 *`
 
+  - `ifconfig`: Devuelve las configuraciones de red
+  - `ip a`: Como el anterior, más moderno. Util cuando el anterior no existe.
+
 ## MySQL
 
 En Mac, los archivos de las tablas de MySQL de PHPMyAdmin se guardan en el directorio: /Applications/XAMPP/xamppfiles/var/mysql/

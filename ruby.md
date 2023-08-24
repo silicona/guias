@@ -21,18 +21,18 @@
 [Instalar solo gema](https://michaelrigart.be/install-pg-ruby-gem-without-postgresql/)
 Libpq - Libreria de funciones interfaz para la bbdd
 
-Ejecutar `brew install libpq`
-    Instala libpq en `usr/local/opt/libpq`
-    If you need to have libpq first in your PATH run:
-  `echo 'export PATH="/usr/local/opt/libpq/bin:$PATH"' >> ~/.bash_profile`
+  - Ejecutar `brew install libpq`
+  - Instala libpq en `usr/local/opt/libpq`
+  - If you need to have libpq first in your PATH run: `echo 'export PATH="/usr/local/opt/libpq/bin:$PATH"' >> ~/.bash_profile`
 
-Instalar Pg
-    Ejecutar `gem install pg -- --with-opt-dir="/usr/local/opt/libpq"`
+### Instalacion Mac
+- `gem uninstall pg`
+- Opcion con Brew: `brew install postgresql@14`
+- Ejecutar `gem install pg -- --with-opt-dir="/usr/local/opt/libpq"`
 
-    Con bundle:
-        `bundle config --local build.pg --with-opt-dir="/usr/local/opt/libpq"`
-        `bundle install`
-
+- Con bundle:
+  - `bundle config --local build.pg --with-opt-dir="/usr/local/opt/libpq"`
+  - `bundle install`
 
 ## RVM
 

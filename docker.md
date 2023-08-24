@@ -13,6 +13,10 @@ Utilizado para montar SQLSERVER de microsoft en Mac
 
 `docker stop nombre_contenedor` - detiene el contenedor
 
+`docker -v`
+
+`docker container ls` - Muestra los container activos y sus datos, com id y otros
+
 ## SQLSERVER
 
 [SqlServer para Docker](https://hub.docker.com/_/microsoft-mssql-server)
@@ -47,7 +51,5 @@ Abrir Azure Data Studio y conectar con:
   localhost,1433
   sa
   tu_password
-
-
 
 

@@ -75,11 +75,9 @@ Exportar tabla y estructura
 Exportar una tabla a un archivo
 	: `mysqldump –opt -h <servidor> -u <usuario> -p <basededatos> <tabla> > <archivo.sql>`
 
-Importar base de datos desde archivo.sql
-	: `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
+Importar datos desde archivo.sql
+	: `mysql -u <usuario> -p <basededatos> < <archivo.sql>`
 
-Importar tabla a una base de datos existente
-	: `mysql -h <servidor> -u <usuario> -p <basededatos> < <archivo.sql>`
 
 
 ### Gestión de registros
