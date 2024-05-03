@@ -76,3 +76,4 @@ Informes - cnes-report
 - Descargar
 - Ejecutar `mvn clean install` para crear el .jar ejecutable
 - Entrar en `/target` y ejecutar `java -jar sonar-cnes-report-4.1.3.jar -h`
+
